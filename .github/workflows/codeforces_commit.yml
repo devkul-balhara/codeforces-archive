@@ -1,16 +1,43 @@
-name: Codeforces Auto-Commit
+name: Codeforces Auto-Sync
+
 on:
-  # Disabled automatic triggers
-  # schedule:
-  #   - cron: "*/15 * * * *"  # Disabled auto-run
-  workflow_dispatch:  # Only runs manually
+  schedule:
+    - cron: "*/15 * * * *"  # Runs automatically every 15 minutes
+  workflow_dispatch:        # Allows you to click "Run workflow" manually
 
 jobs:
   fetch-and-commit:
-    if: false  # Prevent job from running at all
     runs-on: ubuntu-latest
     permissions:
       contents: write
+
+    env:
+      TARGET_BRANCH: "main"
+
     steps:
-      - name: Do nothing
-        run: echo "Auto commit temporarily disabled."
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install Dependencies
+        run: |
+          pip install requests
+
+      - name: Run Fetch Script
+        run: |
+          python fetch_submission.py
+
+      - name: Push to Repository
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Automated sync: New Codeforces submissions" && git push origin ${{ env.TARGET_BRANCH }})
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}

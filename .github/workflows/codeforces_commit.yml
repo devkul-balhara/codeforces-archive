@@ -31,7 +31,7 @@ jobs:
 
       - name: Run Fetch Script
         run: |
-          python fetch_submission.py
+          python fetch_submissions.py
 
       - name: Push to Repository
         run: |

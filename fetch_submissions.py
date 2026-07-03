@@ -5,7 +5,7 @@ from datetime import datetime
 import time
 
 # Your Codeforces handle - REPLACE THIS
-HANDLE = ""
+HANDLE = "nullptrx"
 
 # Number of recent submissions to check
 COUNT = 10

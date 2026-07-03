@@ -3,11 +3,11 @@ on:
   # 🚫 Disabled automatic triggers
   # schedule:
   #   - cron: "*/15 * * * *"  # Disabled auto-run
-  workflow_dispatch:  # ✅ Only runs manually
+  workflow_dispatch:  # Only runs manually
 
 jobs:
   fetch-and-commit:
-    if: false  # 🚫 Prevent job from running at all
+    if: false  # Prevent job from running at all
     runs-on: ubuntu-latest
     permissions:
       contents: write

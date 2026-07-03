@@ -1,6 +1,6 @@
 name: Codeforces Auto-Commit
 on:
-  # 🚫 Disabled automatic triggers
+  # Disabled automatic triggers
   # schedule:
   #   - cron: "*/15 * * * *"  # Disabled auto-run
   workflow_dispatch:  # Only runs manually

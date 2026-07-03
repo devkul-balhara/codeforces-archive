@@ -3,8 +3,9 @@ import json
 import os
 from datetime import datetime
 import time
+import html
 
-# Your Codeforces handle - REPLACE THIS
+# Your Codeforces handle
 HANDLE = "nullptrx"
 
 # Number of recent submissions to check
@@ -33,7 +34,10 @@ def load_submission_history():
     history_file = "submission_history.json"
     if os.path.exists(history_file):
         with open(history_file, "r") as f:
-            return json.load(f)
+            try:
+                return json.load(f)
+            except:
+                return []
     return []
 
 def save_submission_history(history):
@@ -44,32 +48,29 @@ def save_submission_history(history):
 def get_solution_code(contest_id, submission_id):
     """Get the code from a Codeforces submission"""
     try:
-        # Directly accessing the submission page
         url = f"https://codeforces.com/contest/{contest_id}/submission/{submission_id}"
-        response = requests.get(url)
+        # Set a user-agent header to mimic a browser request
+        headers = {
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+        }
+        response = requests.get(url, headers=headers)
         response.raise_for_status()
         
-        # This is a simple approach - might need improvements for reliability
-        # We're looking for code within specific HTML elements
         content = response.text
         start_marker = '<pre id="program-source-text"'
         end_marker = '</pre>'
         
         start_idx = content.find(start_marker)
         if start_idx == -1:
-            print(f"Could not find code for submission {submission_id}")
+            print(f"Could not find code block for submission {submission_id}")
             return None
             
-        # Find the actual code start after the pre tag
         code_start = content.find('>', start_idx) + 1
         code_end = content.find(end_marker, code_start)
         
         if code_end > code_start:
             code = content[code_start:code_end]
-            # HTML decode the code
-            import html
-            code = html.unescape(code)
-            return code
+            return html.unescape(code)
         return None
     except Exception as e:
         print(f"Error getting solution code: {e}")
@@ -96,17 +97,12 @@ def get_file_extension(lang):
         return "kt"
     elif "ruby" in lang:
         return "rb"
-    # Add more languages as needed
-    return "txt"  # Default
+    return "txt"
 
 def main():
-    # Make sure submissions directory exists
     os.makedirs("submissions", exist_ok=True)
-    
-    # Load submission history
     submitted_problems = load_submission_history()
     
-    # Fetch recent submissions
     print(f"Fetching submissions for {HANDLE}...")
     try:
         data = fetch_with_retry(SUBMISSION_API)
@@ -115,10 +111,8 @@ def main():
         print(f"Failed to fetch submissions: {e}")
         return
     
-    # Process new accepted submissions
     new_count = 0
     for submission in submissions:
-        # Only process accepted solutions
         if submission["verdict"] != "OK":
             continue
             
@@ -127,43 +121,34 @@ def main():
         submission_id = submission["id"]
         problem_id = f"{contest_id}_{problem_index}"
         
-        # Skip if already processed
         if problem_id in submitted_problems:
             continue
             
-        # Get the programming language
         lang = submission["programmingLanguage"]
         extension = get_file_extension(lang)
         
-        # Get solution code
+        print(f"Scraping source code for {problem_id}...")
         code = get_solution_code(contest_id, submission_id)
         if not code:
             print(f"Couldn't get code for {problem_id}, skipping")
             continue
         
-        # Save the code to a file
         file_path = f"submissions/{problem_id}.{extension}"
         with open(file_path, "w", encoding="utf-8") as file:
             file.write(code)
         
-        # Add problem metadata as a comment
         problem_name = submission["problem"].get("name", "Unknown")
-        contest_name = f"Contest {contest_id}"
         with open("submissions/log.txt", "a") as log:
             timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             log.write(f"{problem_id} - {problem_name} - Solved on {timestamp}\n")
         
-        # Add to history
         submitted_problems.append(problem_id)
         new_count += 1
-        print(f"Added solution for {problem_id} - {problem_name}")
+        print(f"Successfully added solution for {problem_id} - {problem_name}")
+        time.sleep(1) # Prevent hitting Codeforces too fast
     
-    # Save updated history
     save_submission_history(submitted_problems)
-    
     print(f"Processed {new_count} new accepted solutions")
-    if new_count > 0:
-        print("New solutions have been saved to the submissions directory")
 
 if __name__ == "__main__":
     main()

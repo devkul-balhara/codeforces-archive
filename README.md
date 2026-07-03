@@ -1,4 +1,4 @@
-# 🚀 Codeforces Submissions Auto-Sync
+# Codeforces Submissions Auto-Sync
 
 Automatically **fetch and sync your accepted Codeforces submissions** into this repository using **GitHub Actions** — zero manual copy-paste.
 
@@ -6,7 +6,7 @@ Automatically **fetch and sync your accepted Codeforces submissions** into this 
 
 ---
 
-## ✨ What this does
+## What this does
 
 - 🔎 Tracks your **latest Accepted (AC)** submissions from Codeforces.
 - 📁 Saves each solution under `submissions/`, grouped by problem ID (e.g., `1700_A.cpp`).
@@ -16,7 +16,7 @@ Automatically **fetch and sync your accepted Codeforces submissions** into this 
 
 ---
 
-## ⚙️ How it works
+## How it works
 
 1. A scheduled GitHub Action triggers every 15 minutes.
 2. The script queries the **Codeforces API** for your most recent **AC** submissions.
@@ -27,7 +27,7 @@ Automatically **fetch and sync your accepted Codeforces submissions** into this 
 
 ---
 
-## 🔧 Setup
+## Setup
 
 ### 1) Fork this repository
 Click **Fork** to create your copy.
@@ -52,7 +52,7 @@ Commit the change.
 
 ---
 
-## ▶️ Usage
+## Usage
 
 - **Automatic**: runs every 15 minutes by default.
 - **Manual**:
@@ -62,7 +62,7 @@ Commit the change.
 
 ---
 
-## 📁 Repository Structure
+## Repository Structure
 
 ```txt
 📦 your-repo
@@ -83,7 +83,7 @@ Commit the change.
 
 ---
 
-## 🧩 Customization
+## Customization
 
 - **Schedule cadence**: edit the cron in `codeforces_commit.yml`:
 ```yaml
@@ -102,7 +102,7 @@ env:
 
 ---
 
-## ❓ FAQ / Troubleshooting
+## FAQ / Troubleshooting
 
 - **No files are syncing**
   - Check **Actions → Codeforces Auto-Sync** logs.

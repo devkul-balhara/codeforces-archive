@@ -5,3 +5,4 @@
 2232_C1 - Seating Arrangement (Easy Version) - Solved on 2026-07-03 17:47:22
 2237_D - Fullmetal Bitchemist - Solved on 2026-07-03 17:47:24
 2238_C - Village Guilds - Solved on 2026-07-03 17:47:27
+2236_A - Games on the Train - Solved on 2026-07-04 18:13:47

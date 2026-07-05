@@ -6,3 +6,4 @@
 2237_D - Fullmetal Bitchemist - Solved on 2026-07-03 17:47:24
 2238_C - Village Guilds - Solved on 2026-07-03 17:47:27
 2236_A - Games on the Train - Solved on 2026-07-04 18:13:47
+2233_C - Cost of a Bracket Sequence - Solved on 2026-07-05 17:47:04

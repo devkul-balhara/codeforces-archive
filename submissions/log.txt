@@ -8,3 +8,4 @@
 2236_A - Games on the Train - Solved on 2026-07-04 18:13:47
 2233_C - Cost of a Bracket Sequence - Solved on 2026-07-05 17:47:04
 2242_C - Unstable Elements - Solved on 2026-07-07 16:26:50
+2241_E - Fair and Square - Solved on 2026-07-10 08:50:55

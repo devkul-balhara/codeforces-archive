@@ -11,3 +11,4 @@
 2241_E - Fair and Square - Solved on 2026-07-10 08:50:55
 2242_B - Predominant Frequency Division - Solved on 2026-07-11 18:55:54
 2242_D - Two Digit Strings - Solved on 2026-07-12 18:36:35
+2236_E - Friendly Gifts - Solved on 2026-07-13 16:28:14

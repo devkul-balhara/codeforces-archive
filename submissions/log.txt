@@ -12,3 +12,6 @@
 2242_B - Predominant Frequency Division - Solved on 2026-07-11 18:55:54
 2242_D - Two Digit Strings - Solved on 2026-07-12 18:36:35
 2236_E - Friendly Gifts - Solved on 2026-07-13 16:28:14
+2246_C - 0mar and Alternating Sums - Solved on 2026-07-15 20:18:40
+2244_C - Stepan and Permutation - Solved on 2026-07-15 20:18:42
+2244_D - Yaroslav and Productivity - Solved on 2026-07-15 20:18:45

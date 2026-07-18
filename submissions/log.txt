@@ -16,3 +16,4 @@
 2244_C - Stepan and Permutation - Solved on 2026-07-15 20:18:42
 2244_D - Yaroslav and Productivity - Solved on 2026-07-15 20:18:45
 2246_B - ezraft and Array - Solved on 2026-07-16 11:11:19
+2236_F1 - Elections in Saransk (easy version) - Solved on 2026-07-18 06:21:26

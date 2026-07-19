@@ -20,3 +20,4 @@
 2241_F - A Bit Odd - Solved on 2026-07-18 10:59:03
 2232_C2 - Seating Arrangement (Hard Version) - Solved on 2026-07-18 15:37:01
 2247_C - Inversion of a Subsequence - Solved on 2026-07-18 22:31:36
+2247_B - Yet Another Constructive - Solved on 2026-07-19 09:18:58

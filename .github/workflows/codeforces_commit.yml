@@ -49,6 +49,9 @@ jobs:
               git commit -m "Automated sync: Added solution for $FILE"
             done
             
+            # Pull any new changes from GitHub to prevent conflicts
+            git pull --rebase origin ${{ env.TARGET_BRANCH }}
+            
             # Push all the individual commits to GitHub at once
             git push origin ${{ env.TARGET_BRANCH }}
           else

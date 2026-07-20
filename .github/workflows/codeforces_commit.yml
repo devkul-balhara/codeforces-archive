@@ -37,7 +37,22 @@ jobs:
         run: |
           git config --global user.name "devkul-balhara"
           git config --global user.email "devkulbalharaofficial@gmail.com"
-          git add .
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Automated sync: New Codeforces submissions" && git push origin ${{ env.TARGET_BRANCH }})
+          
+          # Find all new (untracked) and modified files
+          CHANGED_FILES=$(git ls-files --others --modified --exclude-standard)
+          
+          # Check if there are any files to commit
+          if [ -n "$CHANGED_FILES" ]; then
+            # Loop through each changed file
+            for FILE in $CHANGED_FILES; do
+              git add "$FILE"
+              git commit -m "Automated sync: Added solution for $FILE"
+            done
+            
+            # Push all the individual commits to GitHub at once
+            git push origin ${{ env.TARGET_BRANCH }}
+          else
+            echo "No new submissions to commit."
+          fi
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}

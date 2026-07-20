@@ -43,8 +43,8 @@ jobs:
           
           # Check if there are any files to commit
           if [ -n "$CHANGED_FILES" ]; then
-            # Loop through each changed file
-            for FILE in $CHANGED_FILES; do
+            # Safely loop through each file, even if it has spaces
+            git ls-files --others --modified --exclude-standard | while read -r FILE; do
               git add "$FILE"
               git commit -m "Automated sync: Added solution for $FILE"
             done

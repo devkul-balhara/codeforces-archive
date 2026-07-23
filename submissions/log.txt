@@ -26,3 +26,4 @@
 2245_C - MEXOR - Solved on 2026-07-20 18:00:19
 2234_D - XOR, Expression and Two Binary Numbers - Solved on 2026-07-21 09:57:30
 2227_E - It All Went Sideways - Solved on 2026-07-22 16:43:51
+2230_C - Arrange the Numbers in a Circle - Solved on 2026-07-23 11:48:55

@@ -31,3 +31,4 @@
 2171_F - Rae Taylor and Trees (hard version) - Solved on 2026-07-27 10:48:56
 2250_B - String Construction - Solved on 2026-07-28 20:07:26
 2249_B - Permutation Cuts - Solved on 2026-07-28 21:30:57
+2233_D - Goods on the Shelf - Solved on 2026-07-30 11:14:46

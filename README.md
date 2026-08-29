@@ -2,7 +2,7 @@
 
 Automatically synchronizes accepted **Codeforces** submissions to GitHub using **GitHub Actions**.
 
-## ⚙️ Architecture
+## Architecture
 
 ```mermaid
 flowchart TD
@@ -26,7 +26,7 @@ flowchart TD
     H --> I
 ```
 
-## 📂 Repository Structure
+## Repository Structure
 
 ```text
 .
@@ -39,7 +39,7 @@ flowchart TD
 └── README.md
 ```
 
-## ✨ Features
+## Features
 
 * Automatically syncs newly accepted Codeforces submissions
 * Runs every 15 minutes via GitHub Actions
@@ -47,7 +47,7 @@ flowchart TD
 * Preserves the correct file extension for each programming language
 * Supports manual workflow execution from GitHub Actions
 
-## 💻 Supported Languages
+## Supported Languages
 
 Works with all major languages supported by Codeforces, including:
 

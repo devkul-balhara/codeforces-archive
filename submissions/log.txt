@@ -38,3 +38,4 @@
 1795_C - Tea Tasting - Solved on 2026-11-11 23:35:19
 2276_C - Subarrays - Solved on 2026-11-12 20:26:48
 1985_F - Final Boss - Solved on 2026-11-13 08:14:27
+1486_B - Eastern Exhibition - Solved on 2026-11-13 22:02:42

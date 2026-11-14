@@ -39,3 +39,7 @@
 2276_C - Subarrays - Solved on 2026-11-12 20:26:48
 1985_F - Final Boss - Solved on 2026-11-13 08:14:27
 1486_B - Eastern Exhibition - Solved on 2026-11-13 22:02:42
+1761_A - Two Permutations - Solved on 2026-11-14 20:12:18
+1783_A - Make it Beautiful - Solved on 2026-11-14 20:12:20
+1789_A - Serval and Mocha's Array - Solved on 2026-11-14 20:12:22
+1859_A - United We Stand - Solved on 2026-11-14 20:12:24

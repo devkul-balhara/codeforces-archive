@@ -46,3 +46,4 @@
 1077_C - Good Array - Solved on 2026-11-16 19:32:24
 2275_F - Tea Blend - Solved on 2026-11-17 19:48:08
 2276_D - Caveman - Solved on 2026-11-19 23:19:04
+1703_F - Yet Another Problem About Pairs Satisfying an Inequality - Solved on 2026-11-20 20:49:52
